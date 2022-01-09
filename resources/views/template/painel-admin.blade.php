@@ -143,8 +143,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php @session_start();
-                                                                                            echo $_SESSION['nome_usuario']; ?></span>
-                                <img class="img-profile rounded-circle" src="">
+                                                                                            echo @$_SESSION['nome_usuario']; ?></span>
+                                <img class="img-profile rounded-circle" src="{{ URL::asset('img/sem-foto.jpg') }}">
 
                             </a>
                             <!-- Dropdown - User Information -->
@@ -196,7 +196,7 @@
 
     <!--  Modal Perfil-->
     <div class="modal fade" id="ModalPerfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Editar Perfil</h5>
@@ -210,30 +210,25 @@
                 <form id="form-perfil" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
 
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <label>Nome</label>
-                                    <input value=">" type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>CPF</label>
-                                    <input value="" type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input value="" type="email" class="form-control" id="email" name="email" placeholder="Email">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Senha</label>
-                                    <input value="" type="password" class="form-control" id="text" name="senha" placeholder="Senha">
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input value="" type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
                         </div>
 
+                        <div class="form-group">
+                            <label>CPF</label>
+                            <input value="" type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input value="" type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Senha</label>
+                            <input value="" type="password" class="form-control" id="text" name="senha" placeholder="Senha">
+                        </div>
 
                     </div>
                     <div class="modal-footer">
