@@ -13,7 +13,7 @@ if (!isset($id)) {
 ?>
 
 
-<a href="" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Instrutor</a>
+<a href="{{route('instrutores.inserir')}}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Instrutor</a>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
