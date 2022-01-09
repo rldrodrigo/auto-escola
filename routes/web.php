@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CadInstrutoresController;
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RecepController;
 use App\Http\Controllers\UsuarioController;
@@ -38,6 +39,18 @@ Route::get('recep/{item}/edit', [RecepController::class, 'edit'])->name('recep.e
 Route::put('recep/{item}', [RecepController::class, 'editar'])->name('recep.editar');
 Route::delete('recep/{item}', [RecepController::class, 'delete'])->name('recep.delete');
 Route::get('recep/{item}/delete', [RecepController::class, 'modal'])->name('recep.modal');
+
+Route::get('usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
+Route::delete('usuarios/{item}', [UsuarioController::class, 'delete'])->name('usuarios.delete');
+Route::get('usuarios/{item}/delete', [UsuarioController::class, 'modal'])->name('usuarios.modal');
+
+Route::get('categorias', [CategoriaController::class, 'index'])->name('categorias.index');
+Route::post('categorias', [CategoriaController::class, 'insert'])->name('categorias.insert');
+Route::get('categorias/inserir', [CategoriaController::class, 'create'])->name('categorias.inserir');
+Route::get('categorias/{item}/edit', [CategoriaController::class, 'edit'])->name('categorias.edit');
+Route::put('categorias/{item}', [CategoriaController::class, 'editar'])->name('categorias.editar');
+Route::delete('categorias/{item}', [CategoriaController::class, 'delete'])->name('categorias.delete');
+Route::get('categorias/{item}/delete', [CategoriaController::class, 'modal'])->name('categorias.modal');
 
 
 

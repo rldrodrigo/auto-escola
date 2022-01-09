@@ -44,4 +44,22 @@ class UsuarioController extends Controller
         @session_destroy();
         return view('index');
     }
+
+    public function index()
+    {
+        $tabela = usuario::orderby('id', 'desc')->paginate();
+        return view('painel-admin.usuarios.index', ['itens' => $tabela]);
+    }
+
+    public function delete(usuario $item)
+    {
+        $item->delete();
+        return redirect()->route('usuarios.index');
+    }
+
+    public function modal($id)
+    {
+        $item = usuario::orderby('id', 'desc')->paginate();
+        return view('painel-admin.usuarios.index', ['itens' => $item, 'id' => $id]);
+    }
 }

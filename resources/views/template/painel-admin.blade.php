@@ -78,6 +78,7 @@ $usuario = usuario::find($id_usuario);
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{route('instrutores.index')}}">Instrutores</a>
                         <a class="collapse-item" href="{{route('recep.index')}}">Recepcionistas</a>
+                        <a class="collapse-item" href="{{route('usuarios.index')}}">Usuários</a>
                     </div>
                 </div>
             </li>
@@ -85,15 +86,13 @@ $usuario = usuario::find($id_usuario);
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-home"></i>
-                    <span>Opções Imóveis</span>
+                    <i class="fas fa-plus"></i>
+                    <span>Cadastros</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Dados Imóveis:</h6>
-                        <a class="collapse-item" href=">">Cidade</a>
-                        <a class="collapse-item" href="">Bairro</a>
-                        <a class="collapse-item" href="">Tipo</a>
+                        <a class="collapse-item" href="{{route('categorias.index')}}">Categorias</a>
+                        <a class="collapse-item" href="">Automóveis</a>
 
                     </div>
                 </div>
@@ -113,7 +112,7 @@ $usuario = usuario::find($id_usuario);
             <li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Agenda Corretores</span></a>
+                    <span>Colocar Opções</span></a>
             </li>
 
             <!-- Divider -->
