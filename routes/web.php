@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CadInstrutoresController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsuarioController;
@@ -21,3 +22,5 @@ Route::post('painel', [UsuarioController::class, 'login'])->name('usuarios.login
 Route::get('instrutores', [CadInstrutoresController::class, 'index'])->name('instrutores.index');
 Route::get('home-admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/', [UsuarioController::class, 'logout'])->name('usuarios.logout');
+
+Route::put('admin/{usuario}', [AdminController::class, 'editar'])->name('admin.editar');
