@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CadInstrutoresController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RecepController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,15 @@ Route::get('instrutores/{item}/edit', [CadInstrutoresController::class, 'edit'])
 Route::put('instrutores/{item}', [CadInstrutoresController::class, 'editar'])->name('instrutores.editar');
 Route::delete('instrutores/{item}', [CadInstrutoresController::class, 'delete'])->name('instrutores.delete');
 Route::get('instrutores/{item}/delete', [CadInstrutoresController::class, 'modal'])->name('instrutores.modal');
+
+
+Route::get('recep', [RecepController::class, 'index'])->name('recep.index');
+Route::post('recep', [RecepController::class, 'insert'])->name('recep.insert');
+Route::get('recep/inserir', [RecepController::class, 'create'])->name('recep.inserir');
+Route::get('recep/{item}/edit', [RecepController::class, 'edit'])->name('recep.edit');
+Route::put('recep/{item}', [RecepController::class, 'editar'])->name('recep.editar');
+Route::delete('recep/{item}', [RecepController::class, 'delete'])->name('recep.delete');
+Route::get('recep/{item}/delete', [RecepController::class, 'modal'])->name('recep.modal');
 
 
 
