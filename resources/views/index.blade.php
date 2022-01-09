@@ -193,11 +193,13 @@
     </style>
 
     <title>Login</title>
+    <link rel="shortcut icon" href="{{ URL::asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ URL::asset('img/favicon.ico') }}" type="image/x-icon">
 </head>
 
 <body>
     <div class="login">
-        <h1>Login</h1>
+        <h1><img src="{{ URL::asset('img/logo.png') }}" width="200px" alt=""></h1>
         <form method="post" action="{{route('usuarios.login')}}">
             @csrf
             <input type="text" name="usuario" placeholder="Seu Email ou CPF" required="required" />

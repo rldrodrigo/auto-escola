@@ -35,8 +35,8 @@ $usuario = usuario::find($id_usuario);
     <script src="{{ URL::asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-    <link rel="shortcut icon" href="../../img/favicon0.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon0.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ URL::asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ URL::asset('img/favicon.ico') }}" type="image/x-icon">
 
 </head>
 
