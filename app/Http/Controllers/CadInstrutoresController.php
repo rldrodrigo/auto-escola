@@ -31,12 +31,20 @@ class CadInstrutoresController extends Controller
         $tabela->credencial = $request->credencial;
         $tabela->data_venc = $request->data;
 
+        $tabela2 = new usuario();
+        $tabela2->nome = $request->nome;
+        $tabela2->usuario = $request->email;
+        $tabela2->senha = '123';
+        $tabela2->cpf = $request->cpf;
+        $tabela2->nivel = 'instrutor';
+
         $itens = instrutore::where('cpf', '=', $request->cpf)->orwhere('credencial', '=', $request->credencial)->orwhere('email', '=', $request->email)->count();
         if ($itens > 0) {
             echo "<script language='javascript'> window.alert('Registro já cadastrado!!') </script>";
             return view('painel-admin.instrutores.create');
         } else {
             $tabela->save();
+            $tabela2->save();
             return redirect()->route('instrutores.index');
         }
     }
