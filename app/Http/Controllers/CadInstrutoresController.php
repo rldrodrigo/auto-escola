@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\instrutore;
+use App\Models\usuario;
 use Illuminate\Http\Request;
 
 class CadInstrutoresController extends Controller
@@ -86,5 +87,17 @@ class CadInstrutoresController extends Controller
 
         $item->save();
         return redirect()->route('instrutores.index');
+    }
+
+    public function delete(instrutore $item)
+    {
+        $item->delete();
+        return redirect()->route('instrutores.index');
+    }
+
+    public function modal($id)
+    {
+        $item = instrutore::orderby('id', 'desc')->paginate();
+        return view('painel-admin.instrutores.index', ['itens' => $item, 'id' => $id]);
     }
 }
